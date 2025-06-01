@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-HF_API_TOKEN = st.secrets["HF_API_TOKEN"]
+HF_API_TOKEN = "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"
 MODEL_ENDPOINT = "https://api-inference.huggingface.co/models/google/gemma-3n-E4B-it-litert-preview"
 
 if "messages" not in st.session_state:
