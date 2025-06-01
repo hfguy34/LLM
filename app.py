@@ -5,7 +5,7 @@ st.set_page_config(page_title="LLM Health Chatbot", layout="wide")
 
 # Load API key securely
 HF_API_KEY = st.secrets["api"]["hf_api_key"]
-HF_API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+HF_API_URL = "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-0528"
 
 headers = {
     "Authorization": f"Bearer {HF_API_KEY}",
