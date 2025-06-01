@@ -5,7 +5,7 @@ from pdf2image import convert_from_bytes
 import requests
 
 # Set your HF API key here
-HF_API_KEY = "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"
+HF_API_KEY = "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"
 
 # Select a suitable LLM from Hugging Face Hub
 HF_MODEL = "google/gemma-3n-E4B-it-litert-preview"
