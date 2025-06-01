@@ -4,6 +4,10 @@ from PIL import Image
 from pdf2image import convert_from_bytes
 import requests
 
+
+
+
+
 # Set your HF API key here
 HF_API_KEY = "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"
 
@@ -15,7 +19,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
-HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL}"
+HF_API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
 
 st.title("హెల్త్ రిపోర్ట్ తెలుగులో విశ్లేషణ")
 st.markdown("మీ మెడికల్ రిపోర్ట్‌ను అప్‌లోడ్ చేసి, ఫలితాన్ని తెలుగులో తెలుసుకోండి.")
