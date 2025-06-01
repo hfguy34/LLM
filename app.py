@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 HF_API_TOKEN = "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"
-HF_API_URL = "https://api-inference.huggingface.co/models/gpt2"  # You can switch to another text generation model
+HF_API_URL = "https://api-inference.huggingface.co/models/gpt2"
 
 headers = {
     "Authorization": f"Bearer {HF_API_TOKEN}",
@@ -36,11 +36,9 @@ with st.form(key='chat_form', clear_on_submit=True):
 if submit and user_input.strip():
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    # Add F1 expert prompt
     prompt = f"You are a Formula 1 expert. Answer the question clearly and accurately.\nQuestion: {user_input}\nAnswer:"
     bot_response = query_huggingface(prompt)
 
-    # Remove the prompt from the response if repeated
     if bot_response.startswith(prompt):
         bot_response = bot_response[len(prompt):].strip()
 
