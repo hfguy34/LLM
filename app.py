@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # WARNING: Hardcoding API keys is NOT secure, only do this for quick local testing
-API_KEY = "sk-ebf6cf5d2143487bac8effece0ec2f12"
+API_KEY = "sk-3aa2884c5e144181ac166d11665e7a02"
 DEESEEK_API_URL = "https://api.deepseek.ai/chat"  # Replace with actual Deepseek API endpoint
 
 def get_deepseek_response(user_input):
