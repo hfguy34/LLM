@@ -9,7 +9,7 @@ import requests
 
 
 # Set your HF API key here
-HF_API_KEY = st.secrets["api"]["hf_api_key"]
+HF_API_KEY = st.secrets["hf_api_key"]
 
 
 # Select a suitable LLM from Hugging Face Hub
