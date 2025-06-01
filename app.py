@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Your Hugging Face API token
-HF_API_TOKEN = st.secrets["HF_API_TOKEN"]
+HF_API_TOKEN = "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"
 
 
 
