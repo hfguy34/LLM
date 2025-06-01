@@ -2,14 +2,14 @@ import streamlit as st
 import requests
 
 # Your Hugging Face API token
-HF_API_TOKEN = "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"
+HF_API_TOKEN = "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"
 
 
 
 
 
 # Google FLAN-T5 Large model endpoint on Hugging Face
-MODEL_ENDPOINT = "https://api-inference.huggingface.co/models/google/flan-t5-large"
+MODEL_ENDPOINT = "https://api-inference.huggingface.co/models/google/gemma-3n-E4B-it-litert-preview"
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
