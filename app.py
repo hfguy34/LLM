@@ -20,7 +20,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
-HF_API_URL = "https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-0528"
+HF_API_URL = "https://api-inference.huggingface.co/models/google/gemma-3n-E4B-it-litert-preview"
 
 st.title("హెల్త్ రిపోర్ట్ తెలుగులో విశ్లేషణ")
 st.markdown("మీ మెడికల్ రిపోర్ట్‌ను అప్‌లోడ్ చేసి, ఫలితాన్ని తెలుగులో తెలుసుకోండి.")
