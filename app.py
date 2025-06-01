@@ -1,28 +1,25 @@
 import streamlit as st
 import requests
 
-# WARNING: Hardcoding API keys is NOT secure, only do this for quick local testing
-API_KEY = "sk-3aa2884c5e144181ac166d11665e7a02"
-DEESEEK_API_URL = "https://api.deepseek.ai/chat"  # Replace with actual Deepseek API endpoint
+# Hardcoded Hugging Face API token (replace with yours)
+HF_API_TOKEN = "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"
+HF_API_URL = "https://api-inference.huggingface.co/models/google/gemma-3n-E4B-it-litert-preview"  # example model
 
-def get_deepseek_response(user_input):
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-    }
-    payload = {
-        "query": user_input,
-    }
-    try:
-        response = requests.post(DEESEEK_API_URL, json=payload, headers=headers)
-        response.raise_for_status()
+headers = {
+    "Authorization": f"Bearer {HF_API_TOKEN}",
+    "Content-Type": "application/json"
+}
+
+def query_huggingface(payload):
+    response = requests.post(HF_API_URL, headers=headers, json=payload)
+    if response.status_code == 200:
         data = response.json()
-        answer = data.get("answer") or data.get("response") or "No response found."
-        return answer
-    except Exception as e:
-        return f"Error: {e}"
+        # GPT2 returns a list of generated texts
+        return data[0]['generated_text']
+    else:
+        return f"Error: {response.status_code} {response.text}"
 
-st.title("Deepseek Chatbot")
+st.title("Hugging Face Chatbot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -33,12 +30,15 @@ with st.form(key='chat_form', clear_on_submit=True):
 
 if submit and user_input.strip():
     st.session_state.messages.append({"role": "user", "content": user_input})
-
-    bot_response = get_deepseek_response(user_input)
+    payload = {
+        "inputs": user_input,
+        "parameters": {"max_length": 100, "do_sample": False}
+    }
+    bot_response = query_huggingface(payload)
     st.session_state.messages.append({"role": "bot", "content": bot_response})
 
 for msg in st.session_state.messages:
     if msg["role"] == "user":
         st.markdown(f"**You:** {msg['content']}")
     else:
-        st.markdown(f"**Deepseek:** {msg['content']}")
+        st.markdown(f"**Bot:** {msg['content']}")
