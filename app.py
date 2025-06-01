@@ -8,7 +8,7 @@ import requests
 HF_API_KEY = "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"
 
 # Select a suitable LLM from Hugging Face Hub
-HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.1"
+HF_MODEL = "tiiuae/falcon-7b-instruct"
 
 headers = {
     "Authorization": f"Bearer {HF_API_KEY}",
