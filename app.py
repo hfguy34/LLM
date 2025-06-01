@@ -8,7 +8,7 @@ import requests
 HF_API_KEY = "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"
 
 # Select a suitable LLM from Hugging Face Hub
-HF_MODEL = "tiiuae/falcon-7b-instruct"
+HF_MODEL = "google/gemma-3n-E4B-it-litert-preview"
 
 headers = {
     "Authorization": f"Bearer {HF_API_KEY}",
