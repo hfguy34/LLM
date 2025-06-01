@@ -30,7 +30,7 @@ if st.button("Send") and user_input:
     }
     
     response = requests.post(
-        "https://api-inference.huggingface.co/models/deepseek/deepseek-chat",  # replace with actual model repo
+        "https://api-inference.huggingface.co/models/google/gemma-3n-E4B-it-litert-preview",  # replace with actual model repo
         headers=headers,
         json=payload
     )
