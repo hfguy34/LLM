@@ -17,7 +17,7 @@ headers = {
 
 HF_API_URL = f"https://api-inference.huggingface.co/models/{HF_MODEL}"
 
-st.title("హెల్త్ రిపోర్ట్ తెలుగులో విశ్లేషణ (LLM via Hugging Face)")
+st.title("హెల్త్ రిపోర్ట్ తెలుగులో విశ్లేషణ")
 st.markdown("మీ మెడికల్ రిపోర్ట్‌ను అప్‌లోడ్ చేసి, ఫలితాన్ని తెలుగులో తెలుసుకోండి.")
 
 uploaded_file = st.file_uploader("Upload Health Report (PDF or Image)", type=["pdf", "jpg", "jpeg", "png"])
