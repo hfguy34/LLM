@@ -9,7 +9,8 @@ import requests
 
 
 # Set your HF API key here
-HF_API_KEY = "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"
+HF_API_KEY = st.secrets["api"]["hf_api_key"]
+
 
 # Select a suitable LLM from Hugging Face Hub
 HF_MODEL = "google/gemma-3n-E4B-it-litert-preview"
