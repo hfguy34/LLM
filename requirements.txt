@@ -1,5 +1,3 @@
 streamlit
-pillow
-pdf2image
-pytesseract
-requests
+gspread
+oauth2client
