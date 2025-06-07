@@ -5,7 +5,10 @@ from datetime import datetime
 
 # ---- Google Sheets Setup ----
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
+
+# Load credentials from Streamlit secrets
+service_account_info = st.secrets["google_service_account"]
+creds = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info, scope)
 client = gspread.authorize(creds)
 
 # Use your specific Google Sheet by ID (from the link)
